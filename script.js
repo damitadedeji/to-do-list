@@ -1,6 +1,7 @@
 const inputField = document.querySelector("#input");
 const addTaskBtn = document.querySelector("#addTaskBtn")
 const taskList = document.querySelector("#taskList")
+const tasks = document.getElementsByClassName("li");
 console.log(taskList)
 
 addTaskBtn.addEventListener("click",addTask)
@@ -27,11 +28,12 @@ function addTask() {
     }
     
     taskList.appendChild(li);
+    li.addEventListener("click", toggleComplete);
     inputField.value = "";
 }
 
-function setComplete() {
-
+function toggleComplete() {
+    this.classList.toggle("completed");
 }
 
 function deleteTask() {
