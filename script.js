@@ -2,7 +2,6 @@ const inputField = document.querySelector("#input");
 const addTaskBtn = document.querySelector("#addTaskBtn")
 const taskList = document.querySelector("#taskList")
 const tasks = document.getElementsByClassName("li");
-console.log(taskList)
 
 addTaskBtn.addEventListener("click",addTask)
 inputField.addEventListener("keydown", (e) => {
@@ -18,16 +17,20 @@ taskList.addEventListener("contextmenu", (e) => {
     }
 });
 
-function initialiseList() {
-    //addTaskBtn.addEventListener("click",addTask)
-}
-
 function addTask() {
     const value = inputField.value.trim();
     var t = document.createTextNode(value);
+
     const li = document.createElement("li");
-    li.appendChild(t);
-    li.textContent = value;
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+
+    checkbox.addEventListener("change", () => {
+        li.classList.toggle("completed");
+    });
+
+    li.appendChild(checkbox);
+    li.appendChild(document.createTextNode(" " + value));
 
     if (value === "") {
         alert("You must type something.");
@@ -38,10 +41,6 @@ function addTask() {
     li.addEventListener("click", toggleComplete);
     li.addEventListener("right-click", deleteTask);
     inputField.value = "";
-}
-
-function toggleComplete() {
-    this.classList.toggle("completed");
 }
 
 function clearList() {
