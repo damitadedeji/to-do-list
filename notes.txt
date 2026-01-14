@@ -1,4 +1,4 @@
 functions:
 - add a task CHECK
 - check a task as complete CHECK
-- remove a task
+- remove a task CHECK

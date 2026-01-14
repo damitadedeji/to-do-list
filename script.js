@@ -10,6 +10,13 @@ inputField.addEventListener("keydown", (e) => {
         addTask();
     }
 })
+taskList.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+
+    if (e.target.tagName === "LI") {
+        e.target.remove();
+    }
+});
 
 function initialiseList() {
     //addTaskBtn.addEventListener("click",addTask)
@@ -29,15 +36,12 @@ function addTask() {
     
     taskList.appendChild(li);
     li.addEventListener("click", toggleComplete);
+    li.addEventListener("right-click", deleteTask);
     inputField.value = "";
 }
 
 function toggleComplete() {
     this.classList.toggle("completed");
-}
-
-function deleteTask() {
-
 }
 
 function clearList() {
