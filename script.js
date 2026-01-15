@@ -23,6 +23,7 @@ function addTask() {
 
     const li = document.createElement("li");
     const checkbox = document.createElement("input");
+    checkbox.setAttribute("class", "checkbox");
     checkbox.type = "checkbox";
 
     checkbox.addEventListener("change", () => {
@@ -31,6 +32,7 @@ function addTask() {
 
     li.appendChild(checkbox);
     li.appendChild(document.createTextNode(" " + value));
+    li.setAttribute("class", "taskElement");
 
     if (value === "") {
         alert("You must type something.");
@@ -38,8 +40,6 @@ function addTask() {
     }
     
     taskList.appendChild(li);
-    li.addEventListener("click", toggleComplete);
-    li.addEventListener("right-click", deleteTask);
     inputField.value = "";
 }
 

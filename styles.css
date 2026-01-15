@@ -1,14 +1,70 @@
-ul {
-    background-color: green;
-    display: block;
+body {
+    background-color: #EDEDE9;
+}
+
+
+h1 {
+    text-align: center;
 }
 
 li {
     font-size: 24px;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
 }
 
-li:hover {
-    cursor: pointer;
+#appContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 400px;
+    grid-template-columns: 1fr;
+}
+
+#input {
+    margin: 0px;
+    padding: 0px;
+    width: 300px;
+    font-size: 16px;
+    border: none;
+}
+
+#input:focus {
+    outline: none;
+}
+
+#addTaskBtn {
+    margin-left: 10px;
+    padding: 10px 30px;
+    
+}
+
+#addTaskDiv {
+    display: flex;
+}
+#tasksDiv {
+    background-color: green;
+    width: 100%;
+}
+
+#taskList {
+    margin: 0px;
+    padding: 0px;
+}
+
+#taskList .taskElement:nth-child(even) {
+    background-color: pink;
+}
+.taskElement {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0px;
 }
 
 .completed {
