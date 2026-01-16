@@ -1,14 +1,26 @@
-body {
-    background-color: #EDEDE9;
+:root {
+    --page-colour: #6C757D;
+    --background-colour: #E9ECEF;
+    --shadows: #495057;
+    --search: #F8F9FA;
+    --task-colour-1: #DEE2E6;
+    --task-colour-2: #CED4DA; 
 }
 
+body {
+    background-color: var(--page-colour);
+}
 
-h1 {
-    text-align: center;
+h1, p, li, #input, #addTaskBtn {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+p {
+    font-size: 12px;
 }
 
 li {
-    font-size: 24px;
+    font-size: 18px;
     list-style: none;
     margin: 0px;
     padding: 0px;
@@ -20,31 +32,52 @@ li {
     margin: 20px auto;
     width: 400px;
     grid-template-columns: 1fr;
+    box-shadow: 8px 8px 10px var(--shadows);
+    border: 3px solid var(--shadows);
+    background-color: var(--background-colour);
 }
 
 #input {
     margin: 0px;
     padding: 0px;
     width: 300px;
-    font-size: 16px;
+    font-size: 14px;
     border: none;
-}
-
-#input:focus {
-    outline: none;
+    background-color: var(--search);
 }
 
 #addTaskBtn {
+    cursor: pointer;
     margin-left: 10px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     padding: 10px 30px;
+
+    font-size: 16px;
+    background-color: var(--shadows);
+    color: var(--background-colour);
+    transition: opacity 0.2s;
+    border: none;
+    border-radius: 12px;
     
+}
+
+#addTaskBtn:hover {
+    opacity: 0.8;
+}
+
+#addTaskBtn:active {
+    opacity: 0.5;
 }
 
 #addTaskDiv {
     display: flex;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 #tasksDiv {
-    background-color: green;
     width: 100%;
 }
 
@@ -54,7 +87,7 @@ li {
 }
 
 #taskList .taskElement:nth-child(even) {
-    background-color: pink;
+    background-color: var(--task-colour-2);
 }
 .taskElement {
     display: block;
@@ -65,8 +98,17 @@ li {
     align-items: center;
     gap: 15px;
     padding: 10px 0px;
+    background-color: var(--task-colour-1);
 }
 
 .completed {
     text-decoration: line-through;
+}
+
+#instructions {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 400px;
+    grid-template-columns: 1fr;
 }
