@@ -1,4 +1,9 @@
 functions:
 - add a task CHECK
 - check a task as complete CHECK
-- remove a task CHECK
+- remove a task 
+
+review functionality/accessibility/UX
+maybe implement delete button -> more intuitive than right click
+and move instructions maybe into a hover display dropdown
+also add ability to edit a given non-completed task

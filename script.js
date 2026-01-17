@@ -39,6 +39,7 @@ function addTask() {
         return;
     }
     
+    // local storage to be implemented here
     taskList.appendChild(li);
     inputField.value = "";
 }
